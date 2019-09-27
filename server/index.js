@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.static(__dirname + '/../src'));
 app.use('/:id', express.static(__dirname + '/../src'));
-const PORT = 80;
+const PORT = 3000;
 app.listen(PORT, () => console.log('Proxy set'));
 
 app.get('/api/listing/:listingID/photos', (req, res) => {
