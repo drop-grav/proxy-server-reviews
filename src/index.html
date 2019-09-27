@@ -4,10 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>reviews proxy</title>
+  <title>Wei proxy</title>
 </head>
 <body>
+  <div id="Photo-Gallery"></div>
   <div id='reviews'></div>
-  <script src="http://localhost:3000/main.js"></script>
+  <div id='Reservations'></div>
+  <div id='Recommendations'></div>
+  <script src="http://54.183.222.20/main.js"></script>
+  <script src="https://drop-grav-recommendations.s3-us-west-1.amazonaws.com/static/bundle.js"></script>
+  <script src="http://3.14.6.11:3002/bundle.js"></script>
+  <script src="http://ec2-54-183-105-172.us-west-1.compute.amazonaws.com:3100/bundle.js"></script>
+  <script>
+    const { React, ReactDOM, App: Recommendations } = RecommendationsModule;
+    ReactDOM.render(
+      React.createElement(Recommendations),
+      document.getElementById('Recommendations')
+    );
+    ReactDOM.render(
+      React.createElement(Reservations.default),
+      document.getElementById('Reservations')
+    );
+  </script>
 </body>
 </html>
